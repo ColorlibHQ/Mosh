@@ -1,0 +1,17 @@
+#scrollUp,
+.page-item.active .page-link,
+.mosh-btn,
+.mosh-blog-posts .sticky .single-blog .post-meta .featured {
+    background-color: #4a7aec;
+}
+a,
+.single-blog > a,
+.latest-blog-post-content h6 > a:hover, 
+.blog-post-archives ul > li > a:hover, 
+.blog-post-categories ul > li > a:hover,
+.mosh-pagination-area .page-link {
+    color: #4a7aec;
+}
+.page-item.active .page-link {
+    border-color: #4a7aec;
+}
