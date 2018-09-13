@@ -11,7 +11,7 @@ if( !defined( 'ABSPATH' ) ){
  *
  */
 	
-	function themeslug_customize_register( $wp_customize ) {
+	function mosh_customize_register( $wp_customize ) {
 	
 		// Add Theme option panel
 		$wp_customize->add_panel( 'mosh_options_panel',
@@ -535,7 +535,7 @@ if( !defined( 'ABSPATH' ) ){
          		
 		// 404 text one option add settings
 		$wp_customize->add_setting('mosh_fof_text_one', array(
-			'default'        => '',
+			'default'        => esc_html__( 'Ooops 404 Error !', 'mosh' ),
 			'capability'     => 'edit_theme_options',
 			'type'           => 'theme_mod',
 			'transport'  	 => 'refresh',
@@ -552,7 +552,7 @@ if( !defined( 'ABSPATH' ) ){
          		
 		// 404 text one option add settings
 		$wp_customize->add_setting('mosh_fof_text_two', array(
-			'default'        => '',
+			'default'        => wp_kses_post( __( 'Either something went wrong or the page dosen&rsquo;t exist anymore.', 'mosh' ) ),
 			'capability'     => 'edit_theme_options',
 			'type'           => 'theme_mod',
 			'transport'  	 => 'refresh',
@@ -568,7 +568,7 @@ if( !defined( 'ABSPATH' ) ){
 		));	
 		// 404 page text 1 color setting
 		$wp_customize->add_setting('mosh_fof_textonecolor_settings', array(
-			'default'           => '#fff',
+			'default'           => '#404551',
 			'capability'        => 'edit_theme_options',
 			'type'           	=> 'theme_mod',
 			'transport'  		=> 'refresh',
@@ -587,7 +587,7 @@ if( !defined( 'ABSPATH' ) ){
 		)));
 		// 404 page text 2 color setting
 		$wp_customize->add_setting('mosh_fof_texttwocolor_settings', array(
-			'default'           => '#fff',
+			'default'           => '#abadbe',
 			'capability'        => 'edit_theme_options',
 			'type'           	=> 'theme_mod',
 			'transport'  		=> 'refresh',
@@ -895,7 +895,13 @@ if( !defined( 'ABSPATH' ) ){
 		
 		
 	}
-	add_action( 'customize_register', 'themeslug_customize_register' );
-	
-	
-?>
+	add_action( 'customize_register', 'mosh_customize_register' );
+
+function mosh_customizer_js_load() {
+		wp_enqueue_script( 'mosh-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-controls' ), '1.0', true );
+		$mosh_customizer             = array();
+		$mosh_customizer['site_url'] = site_url();
+		$mosh_customizer['blog']     = get_post_type_archive_link( 'post' );
+		wp_localize_script( 'mosh-customizer', 'MoshCustomizer', $mosh_customizer );
+	}
+	add_action( 'customize_controls_enqueue_scripts', 'mosh_customizer_js_load', 99 );

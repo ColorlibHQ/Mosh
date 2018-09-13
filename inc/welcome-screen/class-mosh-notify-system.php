@@ -108,12 +108,14 @@ class Mosh_Notify_System extends Epsilon_Notify_System {
 		}
 	}
 
-	public static function check_cf7_active( $slug, $filename ) {
+	public static function check_plugin_active( $slug, $filename ) {
 		if ( file_exists( ABSPATH . 'wp-content/plugins/' . $slug . '/' . $filename . '.php' ) ) {
 			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 			return is_plugin_active( $slug . '/' . $filename . '.php' );
 		}
+
+		return false;
 	}
 
 	/**
