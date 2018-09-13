@@ -199,11 +199,13 @@ final class Mosh {
 			$mosh_recommended_plugins = array(
 				'elementor'                 => array( 'recommended' => true, 'plugin_filrname' => 'elementor' ),
 				'contact-form-7'            => array( 'recommended' => true, 'plugin_filrname' => 'wp-contact-form-7' ),
-				'colorlib-login-customizer' => array( 'recommended'     => true,
-				                                      'plugin_filrname' => 'colorlib-login-customizer',
+				'colorlib-login-customizer' => array(
+					'recommended'     => true,
+					'plugin_filrname' => 'colorlib-login-customizer',
 				),
-				'simple-custom-post-order'  => array( 'recommended'     => true,
-				                                      'plugin_filrname' => 'simple-custom-post-order',
+				'simple-custom-post-order'  => array(
+					'recommended'     => true,
+					'plugin_filrname' => 'simple-custom-post-order',
 				),
 
 			);
@@ -219,50 +221,43 @@ final class Mosh {
 			$mosh_required_actions = array(
 
 				array(
-					"id"              => 'mosh-companion-plugin',
-					"title"           => Mosh_Notify_System::create_plugin_title( 'Mosh Companion', 'mosh' ),
-					"description"     => __( 'It is highly recommended that you install the mosh companion.', 'mosh' ),
-					"check"           => Mosh_Notify_System::check_plugin_update( 'mosh-companion' ),
-					"plugin_slug"     => 'mosh-companion',
-					"plugin_filrname" => 'mosh-companion',
+					"id"          => 'mosh-companion-plugin',
+					"title"       => Mosh_Notify_System::create_plugin_title( 'Mosh Companion', 'mosh' ),
+					"description" => __( 'It is highly recommended that you install the mosh companion.', 'mosh' ),
+					"check"       => Mosh_Notify_System::check_plugin_is_active( 'mosh-companion' ),
 				),
 				array(
-					"id"              => 'mosh-elementor',
-					"title"           => Mosh_Notify_System::create_plugin_title( 'Elementor', 'elementor' ),
-					'description'     => __( 'It is highly recommended that you install the elementor.', 'mosh' ),
-					"check"           => Mosh_Notify_System::check_plugin_update( 'elementor' ),
-					"plugin_slug"     => 'elementor',
-					"plugin_filrname" => 'elementor',
-				),
-				array(
-					"id"              => 'mosh-contact-form',
-					"title"           => Mosh_Notify_System::create_plugin_title( 'WP Contact Form 7', 'contact-form-7' ),
-					'description'     => __( 'It is highly recommended that you install the WP Contact Form 7.', 'mosh' ),
-					"check"           => Mosh_Notify_System::check_plugin_update( 'wp-contact-form-7' ),
-					"plugin_slug"     => 'contact-form-7',
-					"plugin_filrname" => 'wp-contact-form-7',
-				),
-				array(
-					"id"              => 'mosh-oneclick-demo-importer',
-					"title"           => Mosh_Notify_System::create_plugin_title( 'One Click Demo Import', 'one-click-demo-import' ),
-					'description'     => __( 'It is highly recommended that you install the One Click Demo Import to demo import.', 'mosh' ),
-					"check"           => Mosh_Notify_System::check_plugin_update( 'one-click-demo-import' ),
-					"plugin_slug"     => 'one-click-demo-import',
-					"plugin_filrname" => 'one-click-demo-import',
-				),
-				array(
-					"id"          => 'mosh-req-ac-install-data',
-					"title"       => esc_html__( 'Import Demo Data', 'mosh' ),
-					"description" => esc_html__( 'Before demo install make sure mosh companion and one click demo importer are installed.', 'mosh' ),
-					"help"        => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'themes.php?page=mosh-demo-import' ) . '">' . __( 'Jump To Import', 'mosh' ) . '</a>',
-					"check"       => Mosh_Notify_System::check_wordpress_importer(),
-				),
-				array(
-					"id"          => 'mosh-req-ac-static-latest-news',
-					"title"       => esc_html__( 'Set front page to static', 'mosh' ),
-					"description" => esc_html__( 'If you just installed Mosh, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'mosh' ),
-					"help"        => 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>. <br/><br/> <a class="button button-secondary" target="_blank"  href="' . self_admin_url( 'options-reading.php' ) . '">' . __( 'Set manually', 'mosh' ) . '</a> <a class="button button-primary"  href="' . wp_nonce_url( self_admin_url( 'themes.php?page=mosh-welcome&tab=recommended_actions&action=set_page_automatic' ), 'set_page_automatic' ) . '">' . __( 'Set automatically', 'mosh' ) . '</a>',
-					"check"       => Mosh_Notify_System::is_not_static_page(),
+					"id"          => 'mosh-elementor',
+					"title"       => Mosh_Notify_System::create_plugin_title( 'Elementor', 'elementor' ),
+					'description' => __( 'It is highly recommended that you install the elementor.', 'mosh' ),
+					"check"       => Mosh_Notify_System::check_plugin_is_active( 'elementor' ),
+
+					array(
+						"id"          => 'mosh-contact-form',
+						"title"       => Mosh_Notify_System::create_plugin_title( 'WP Contact Form 7', 'contact-form-7' ),
+						'description' => __( 'It is highly recommended that you install the WP Contact Form 7.', 'mosh' ),
+						"check"       => Mosh_Notify_System::check_cf7_active( 'contact-form-7', 'wp-contact-form-7' ),
+					),
+					array(
+						"id"          => 'mosh-oneclick-demo-importer',
+						"title"       => Mosh_Notify_System::create_plugin_title( 'One Click Demo Import', 'one-click-demo-import' ),
+						'description' => __( 'It is highly recommended that you install the One Click Demo Import to demo import.', 'mosh' ),
+						"check"       => Mosh_Notify_System::check_plugin_is_active( 'one-click-demo-import' ),
+					),
+					array(
+						"id"          => 'mosh-req-ac-install-data',
+						"title"       => esc_html__( 'Import Demo Data', 'mosh' ),
+						"description" => esc_html__( 'Before demo install make sure mosh companion and one click demo importer are installed.', 'mosh' ),
+						"help"        => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'themes.php?page=mosh-demo-import' ) . '">' . __( 'Jump To Import', 'mosh' ) . '</a>',
+						"check"       => Mosh_Notify_System::check_mosh_importers(),
+					),
+					array(
+						"id"          => 'mosh-req-ac-static-latest-news',
+						"title"       => esc_html__( 'Set front page to static', 'mosh' ),
+						"description" => esc_html__( 'If you just installed Mosh, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'mosh' ),
+						"help"        => 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>. <br/><br/> <a class="button button-secondary" target="_blank"  href="' . self_admin_url( 'options-reading.php' ) . '">' . __( 'Set manually', 'mosh' ) . '</a> <a class="button button-primary"  href="' . wp_nonce_url( self_admin_url( 'themes.php?page=mosh-welcome&tab=recommended_actions&action=set_page_automatic' ), 'set_page_automatic' ) . '">' . __( 'Set automatically', 'mosh' ) . '</a>',
+						"check"       => Mosh_Notify_System::is_not_static_page(),
+					),
 				),
 			);
 
