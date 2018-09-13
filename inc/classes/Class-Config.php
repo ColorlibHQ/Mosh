@@ -224,24 +224,32 @@ final class Mosh {
 					"id"          => 'mosh-companion-plugin',
 					"title"       => Mosh_Notify_System::create_plugin_title( 'Mosh Companion', 'mosh' ),
 					"description" => __( 'It is highly recommended that you install the mosh companion.', 'mosh' ),
+					'plugin_slug' => 'mosh-companion',
+					'plugin_filrname' => 'mosh-companion',
 					"check"       => Mosh_Notify_System::check_plugin_is_active( 'mosh-companion' ),
 				),
 				array(
 					"id"          => 'mosh-elementor',
 					"title"       => Mosh_Notify_System::create_plugin_title( 'Elementor', 'elementor' ),
 					'description' => __( 'It is highly recommended that you install the elementor.', 'mosh' ),
+					'plugin_slug' => 'elementor',
+					'plugin_filrname' => 'elementor',
 					"check"       => Mosh_Notify_System::check_plugin_is_active( 'elementor' ),
 
 					array(
 						"id"          => 'mosh-contact-form',
 						"title"       => Mosh_Notify_System::create_plugin_title( 'WP Contact Form 7', 'contact-form-7' ),
 						'description' => __( 'It is highly recommended that you install the WP Contact Form 7.', 'mosh' ),
+						'plugin_slug' => 'contact-form-7',
+						'plugin_filrname' => 'wp-contact-form-7',
 						"check"       => Mosh_Notify_System::check_cf7_active( 'contact-form-7', 'wp-contact-form-7' ),
 					),
 					array(
 						"id"          => 'mosh-oneclick-demo-importer',
 						"title"       => Mosh_Notify_System::create_plugin_title( 'One Click Demo Import', 'one-click-demo-import' ),
 						'description' => __( 'It is highly recommended that you install the One Click Demo Import to demo import.', 'mosh' ),
+						'plugin_slug' => 'one-click-demo-import',
+						'plugin_filrname' => 'one-click-demo-import',
 						"check"       => Mosh_Notify_System::check_plugin_is_active( 'one-click-demo-import' ),
 					),
 					array(

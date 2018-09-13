@@ -331,7 +331,7 @@ class Mosh_Welcome_Screen {
 					                      'plugin_status' => 'all',
 					                      'paged'         => '1',
 					                      '_wpnonce'      => wp_create_nonce( 'deactivate-plugin_' . $slug . '/' . $filename . '.php' ),
-				                      ), network_admin_url( 'plugins.php' ) );
+				                      ), admin_url( 'plugins.php' ) );
 				break;
 			case 'activate':
 				return add_query_arg( array(
@@ -340,7 +340,7 @@ class Mosh_Welcome_Screen {
 					                      'plugin_status' => 'all',
 					                      'paged'         => '1',
 					                      '_wpnonce'      => wp_create_nonce( 'activate-plugin_' . $slug . '/' . $filename . '.php' ),
-				                      ), network_admin_url( 'plugins.php' ) );
+				                      ), admin_url( 'plugins.php' ) );
 				break;
 		}
 	}
