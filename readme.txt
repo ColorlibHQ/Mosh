@@ -1,36 +1,49 @@
-=== Colorlib ===
-Contributors: Colorlib
-Requires at least: WordPress 4.9
-Tested : WordPress 4.9
-Version: 1.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns, left-sidebar, right-sidebar, flexible-header, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, theme-options, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
-Text Domain: mosh
+=== Mosh ===
+Contributors:		colorlib
+Tags:               custom-header, custom-menu, featured-image-header, featured-images, full-width-template, translation-ready
+Requires at least:	4.0
+Tested up to:		4.4.2
 
 == Description ==
 Mosh is a clean, simple, responsive and customizable WordPress theme that looks awesome on any device. For a quick launch of a page to showcases your works, your talents and your services, apredefined theme is a wise decision to make. Mosh has it all in store for you to easily and effortlessly engineer an appealing page to attract new clients and seal new business deals.
 
-* Mobile-first, Responsive Layout
-* Custom Colors
-* Custom Header
-* Social Links
-* Menu Description
-* Post Formats
-* The GPL v2.0 or later license. :) Use it to make something cool.
 
-== Installation == 
+= License =
+Mosh WordPress theme, Copyright (C) 2018 Colorlib.com
+Mosh WordPress theme is licensed under the GPL2.
 
-1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in mosh in the search form and press the 'Enter' key on your keyboard.
-3. Click on the 'Activate' button to use your new theme right away.
-5. Navigate to Appearance > Customize in your admin panel and customize to taste.
+Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License.
+The exceptions to this license are as follows:
 
-== Copyright ==
-gpu
+Images:
+    - theme screenshot: custom work created by Colorlib.com and released under GPLv2
 
+* Bootstrap v4.1.1 (http://getbootstrap.com)
+    Copyright 2011-2018 Twitter, Inc.
+    Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
-http://Colorlib.us/demo/mosh/wordpress/
+* Animate CSS (https://daneden.github.io/animate.css/)
+    Licensed under MIT (https://github.com/daneden/animate.css/blob/master/LICENSE)
 
+ * Font Awesome
+	License: SIL OFL 1.1
+	URL: http://scripts.sil.org/OFL
 
+ * Google Fonts:
+    License: SIL OFL 1.1
+    URL: http://scripts.sil.org/OFL
 
+* PopperJS (https://github.com/FezVrasta/popper.js)
+    Copyright © 2016-2018 Federico Zivolo
+    License: MIT
+    URL: https://github.com/FezVrasta/popper.js/blob/master/LICENSE.md
+
+*ScrollUpJS (http://markgoodyear.com/labs/scrollup/)
+    Copyright (c) Mark Goodyear — @markgdyr — http://markgoodyear.com
+    License: MIT
+    URL: http://markgoodyear.com/labs/scrollup/
+
+*wowJS (https://github.com/graingert/wow)
+    URL: https://wowjs.uk
+    Copyright (c) 2016 - 2018 Thomas Grainger
+    License: MIT
