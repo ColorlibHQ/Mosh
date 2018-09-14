@@ -27,13 +27,14 @@ class Mosh_Notify_System extends Epsilon_Notify_System {
 
 		$importeractive      = self::check_plugin_is_active( 'one-click-demo-import' );
 		$moshcompanionactive = self::check_plugin_is_active( 'mosh-companion' );
+		$moshdata            = get_option( 'mosh-import-data' );
 
-		if ( $importeractive && $moshcompanionactive ) {
-			return false;
+		if ( $importeractive && $moshcompanionactive && $moshdata ) {
+			return true;
 		}
 
 
-		return true;
+		return false;
 	}
 
 	/**
