@@ -1,49 +1,49 @@
 <?php
 // Block direct access
-if( !defined( 'ABSPATH' ) ){
-    exit( 'Direct script access denied.' );
-} 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'Direct script access denied.' );
+}
 /**
  * @Packge     : Mosh
  * @Version    : 1.0
  * @Author     : Colorlib
- * @Author URI : http://colorlib.com/wp/
+ * @Author     URI : http://colorlib.com/wp/
  *
  */
- 
+
 
 // enqueue css
-function mosh_common_custom_css(){
-    
-    wp_enqueue_style( 'mosh-common', get_template_directory_uri().'/assets/css/common.css' );
-		
-		$navbarBg          		  = mosh_opt( 'mosh_header_navbar_bgColor' );
-		$navbarstickyBg           = mosh_opt( 'mosh_header_navbarsticky_bgColor' );
-		$navColor       	  	  = mosh_opt( 'mosh_header_navbar_menuColor' );
-		$navhoverColor       	  = mosh_opt( 'mosh_header_navbar_menuHovColor' );
-		$stickynavColor  		  = mosh_opt( 'mosh_header_sticky_navbar_menuColor' );
-		$stickynavhoverColor 	  = mosh_opt( 'mosh_header_sticky_navbar_menuHovColor' );
-		$footerbtmbgColor         = mosh_opt( 'mosh_footerbtm_bgColor_settings' );
-		$copyrighttextcolor       = mosh_opt( 'mosh_footer_copyrighttextcolor_settings' );
-		$fofbgcolor       		  = mosh_opt( 'mosh_fof_bgcolor_settings' );
-		$textonecolor       	  = mosh_opt( 'mosh_fof_textonecolor_settings' );
-		$texttwocolor       	  = mosh_opt( 'mosh_fof_texttwocolor_settings' );
-		$headerTextColor   		  = get_header_textcolor();
-		$headerbgcolor     	  	  = mosh_opt('mosh_headerbgcolor');
-		$footerwbgColor     	  = mosh_opt('mosh_footer_bgColor_settings');
-		$footerwTextColor   	  = mosh_opt('mosh_footer_wtcolor_settings');
-		$footerwanchorcolor 	  = mosh_opt('mosh_footer_wanchorcolor_settings');
-		$footerwanchorhovcolor    = mosh_opt('mosh_footer_wanchorhovcolor_settings');
-		$widgettitlecolor  		  = mosh_opt('mosh_footer_widgettitlecolor_settings');
-		$themecolor  	   		  = mosh_opt('mosh_themecolor');
-		$themesecondcolor  	      = mosh_opt('mosh_themesecondcolor');
-		$preloaderbgcolor  	      = mosh_opt('mosh_preloaderbgcolor');
-		$loaderbordcolor  	      = mosh_opt('mosh_loaderbordcolor');
-		$loaderbordactivecolor    = mosh_opt('mosh_loaderbordactivecolor');
-		$socialiconcolor    	  = mosh_opt('mosh_footer_socialiconcolor_settings');
-		$socialiconhovercolor     = mosh_opt('mosh_footer_socialiconhovercolor_settings');
+function mosh_common_custom_css() {
 
-        $customcss ="
+	wp_enqueue_style( 'mosh-common', get_template_directory_uri() . '/assets/css/common.css' );
+
+	$navbarBg              = esc_attr( mosh_opt( 'mosh_header_navbar_bgColor' ) );
+	$navbarstickyBg        = esc_attr( mosh_opt( 'mosh_header_navbarsticky_bgColor' ) );
+	$navColor              = esc_attr( mosh_opt( 'mosh_header_navbar_menuColor' ) );
+	$navhoverColor         = esc_attr( mosh_opt( 'mosh_header_navbar_menuHovColor' ) );
+	$stickynavColor        = esc_attr( mosh_opt( 'mosh_header_sticky_navbar_menuColor' ) );
+	$stickynavhoverColor   = esc_attr( mosh_opt( 'mosh_header_sticky_navbar_menuHovColor' ) );
+	$footerbtmbgColor      = esc_attr( mosh_opt( 'mosh_footerbtm_bgColor_settings' ) );
+	$copyrighttextcolor    = esc_attr( mosh_opt( 'mosh_footer_copyrighttextcolor_settings' ) );
+	$fofbgcolor            = esc_attr( mosh_opt( 'mosh_fof_bgcolor_settings' ) );
+	$textonecolor          = esc_attr( mosh_opt( 'mosh_fof_textonecolor_settings' ) );
+	$texttwocolor          = esc_attr( mosh_opt( 'mosh_fof_texttwocolor_settings' ) );
+	$headerTextColor       = get_header_textcolor();
+	$headerbgcolor         = esc_attr( mosh_opt( 'mosh_headerbgcolor' ) );
+	$footerwbgColor        = esc_attr( mosh_opt( 'mosh_footer_bgColor_settings' ) );
+	$footerwTextColor      = esc_attr( mosh_opt( 'mosh_footer_wtcolor_settings' ) );
+	$footerwanchorcolor    = esc_attr( mosh_opt( 'mosh_footer_wanchorcolor_settings' ) );
+	$footerwanchorhovcolor = esc_attr( mosh_opt( 'mosh_footer_wanchorhovcolor_settings' ) );
+	$widgettitlecolor      = esc_attr( mosh_opt( 'mosh_footer_widgettitlecolor_settings' ) );
+	$themecolor            = esc_attr( mosh_opt( 'mosh_themecolor' ) );
+	$themesecondcolor      = esc_attr( mosh_opt( 'mosh_themesecondcolor' ) );
+	$preloaderbgcolor      = esc_attr( mosh_opt( 'mosh_preloaderbgcolor' ) );
+	$loaderbordcolor       = esc_attr( mosh_opt( 'mosh_loaderbordcolor' ) );
+	$loaderbordactivecolor = esc_attr( mosh_opt( 'mosh_loaderbordactivecolor' ) );
+	$socialiconcolor       = esc_attr( mosh_opt( 'mosh_footer_socialiconcolor_settings' ) );
+	$socialiconhovercolor  = esc_attr( mosh_opt( 'mosh_footer_socialiconhovercolor_settings' ) );
+
+	$customcss = "
         	#scrollUp,
         	.page-item.active .page-link,
         	.mosh-btn,
@@ -153,8 +153,9 @@ function mosh_common_custom_css(){
 
 
         ";
-       
-    wp_add_inline_style( 'mosh-common', $customcss );
-    
+
+	wp_add_inline_style( 'mosh-common', $customcss );
+
 }
+
 add_action( 'wp_enqueue_scripts', 'mosh_common_custom_css', 50 );

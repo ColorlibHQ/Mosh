@@ -25,7 +25,7 @@
           <entry key="gitignore" value="1" />
           <entry key="jpg" value="4" />
           <entry key="js" value="5" />
-          <entry key="php" value="8" />
+          <entry key="php" value="20" />
           <entry key="png" value="1" />
           <entry key="txt" value="1" />
         </counts>
@@ -35,7 +35,7 @@
           <entry key="CSS" value="6" />
           <entry key="Image" value="5" />
           <entry key="JavaScript" value="5" />
-          <entry key="PHP" value="8" />
+          <entry key="PHP" value="20" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
@@ -43,14 +43,14 @@
         <counts>
           <entry key="css" value="29" />
           <entry key="gitignore" value="5" />
-          <entry key="php" value="420" />
+          <entry key="php" value="488" />
           <entry key="txt" value="327" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="29" />
-          <entry key="PHP" value="420" />
+          <entry key="PHP" value="488" />
           <entry key="PLAIN_TEXT" value="332" />
         </counts>
       </usages-collector>
@@ -73,11 +73,43 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="22" column="2" lean-forward="true" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+            <state relative-caret-position="966">
+              <caret line="137" column="1" selection-start-line="137" selection-start-column="1" selection-end-line="137" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/mosh-commoncss.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="32" column="84" lean-forward="true" selection-start-line="32" selection-start-column="84" selection-end-line="32" selection-end-column="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/mosh-widgets-reg.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/support-functions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="952">
+              <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/inc/wp-html-helper.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="966">
+              <caret line="354" lean-forward="true" selection-start-line="354" selection-end-line="354" />
             </state>
           </provider>
         </entry>
@@ -97,9 +129,13 @@
       <find>mosh_required_actions</find>
       <find>$mosh_required_actions</find>
       <find>201</find>
+      <find>{$</find>
+      <find>mosh_opt(</find>
     </findStrings>
     <replaceStrings>
       <replace>2018</replace>
+      <replace>{esc_attr($</replace>
+      <replace>esc_attr(mosh_opt(</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -115,6 +151,9 @@
         <option value="$PROJECT_DIR$/inc/classes/Class-Config.php" />
         <option value="$PROJECT_DIR$/readme.txt" />
         <option value="$PROJECT_DIR$/functions.php" />
+        <option value="$PROJECT_DIR$/inc/mosh-commoncss.php" />
+        <option value="$PROJECT_DIR$/inc/support-functions.php" />
+        <option value="$PROJECT_DIR$/inc/wp-html-helper.php" />
       </list>
     </option>
   </component>
@@ -152,7 +191,19 @@
             <path>
               <item name="Mosh" type="b2602c69:ProjectViewProjectNode" />
               <item name="Mosh" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="inc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mosh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mosh" type="462c0819:PsiDirectoryNode" />
+              <item name="inc" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mosh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mosh" type="462c0819:PsiDirectoryNode" />
+              <item name="inc" type="462c0819:PsiDirectoryNode" />
+              <item name="hooks" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -216,13 +267,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="25" column="47" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/classes/Class-Config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="247" column="71" lean-forward="true" selection-start-line="247" selection-start-column="71" selection-end-line="247" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -315,10 +359,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/inc/classes/Class-Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38">
+          <caret line="247" column="22" lean-forward="true" selection-start-line="247" selection-start-column="22" selection-end-line="247" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/classes/Class-Enqueue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1200" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/hooks/hooks.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-780" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/hooks/hooks-functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5694" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/mosh-breadcrumbs.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/mosh-functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2881" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="22" column="2" lean-forward="true" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+        <state relative-caret-position="966">
+          <caret line="137" column="1" selection-start-line="137" selection-start-column="1" selection-end-line="137" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/mosh-commoncss.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="32" column="84" lean-forward="true" selection-start-line="32" selection-start-column="84" selection-end-line="32" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/mosh-widgets-reg.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/support-functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/wp-html-helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="354" lean-forward="true" selection-start-line="354" selection-end-line="354" />
         </state>
       </provider>
     </entry>

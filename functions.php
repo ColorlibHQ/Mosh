@@ -136,6 +136,3 @@ function mosh_init() {
 	$moshobj = $mosh['moshobj'];
 	$moshobj->init();
 }
-
-
-?>
