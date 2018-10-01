@@ -12,12 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Direct script access denied.' );
 }
 
-/*
-*Elementor Partner ID
-*/
-if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
-	define( 'ELEMENTOR_PARTNER_ID', 1266 );
-}
 
 /**
  *
