@@ -1,0 +1,193 @@
+/**
+ * Common css
+ */
+
+.elementor-icon,
+.elementor-widget-counter .elementor-counter-number-wrapper,
+.elementor-widget-icon-list .elementor-icon-list-icon i {
+    color: #4a7aec;
+}
+.elementor-widget-tabs .elementor-tab-title,
+.elementor-widget-accordion .elementor-accordion .elementor-tab-title {
+    color: #222;
+}
+.elementor-accordion .elementor-tab-content,
+.elementor-accordion .elementor-accordion-item {
+    border-color: #eee;
+}
+.elementor-widget-tabs .elementor-tab-content, 
+.elementor-widget-tabs .elementor-tab-title:after,
+.elementor-widget-tabs .elementor-tab-title:before,
+.elementor-widget-tabs .elementor-tab-content {
+    border-color: #eee;
+}
+.elementor-widget-tabs .elementor-tab-desktop-title.elementor-active{
+    border: 0px;
+    background-color: #404551;
+}
+.elementor-widget .elementor-icon-list-item {
+    margin-bottom: 8px;
+}
+.elementor-6 .elementor-element.elementor-element-a2d9792 .elementor-tab-content {
+    color: #abadbe;
+    font-size: 15px;
+}
+/**
+ * Progress Css
+ */
+.elementor-widget-progress .elementor-title {
+    color: #abadbe;
+    margin-bottom: 8px;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 15px;
+}
+.elementor-progress-text {
+    font-size: 0px;
+}
+.elementor-progress-wrapper {
+    background-color: #eee;
+    color: #222;
+    -webkit-border-radius: 0px;
+    height: 5px;
+    line-height: 5px;
+    border-radius: 0px;
+}
+.elementor-progress-bar {
+    background-color: #4a7aec;
+    position: relative;
+    border-radius: 0px;
+    height: 5px;
+}
+.elementor-progress-percentage {
+    padding-right: 0px;
+    position: absolute;
+    right: 0;
+    color: #4a7aec;
+    top: -20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+/**
+ * Button Css
+ */
+.elementor-button.elementor-size-xs,
+.elementor-button.elementor-size-lg,
+.elementor-button.elementor-size-xl,
+.elementor-button.elementor-size-md,
+.elementor-button.elementor-size-sm {
+    border-radius: 50px;
+    background: #4a7aec;
+    border: 1px solid #4a7aec;
+    color: #fff;
+    font-weight: 600;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.elementor-button.elementor-size-xs:hover,
+.elementor-button.elementor-size-lg:hover,
+.elementor-button.elementor-size-xl:hover,
+.elementor-button.elementor-size-md:hover,
+.elementor-button.elementor-size-sm:hover {
+    background-color: #1a3c8d;
+    color: #fff;
+}
+/**
+ * Icon box and image box css
+ *
+ */
+.elementor-image-box-title,
+.elementor-icon-box-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+ }
+/**
+ * Testimonial css
+ *
+ */
+.elementor-testimonial-wrapper .elementor-testimonial-content {
+    font-size: 14px;
+}
+.elementor-testimonial-wrapper .elementor-testimonial-name {
+    font-weight: 500;
+    color: #222;
+}
+/**
+ * Toggle css
+ *
+ */
+.elementor-toggle .elementor-tab-title,
+.elementor-toggle .elementor-tab-content {
+    border-color: #eee;
+
+}
+.elementor-toggle .elementor-tab-title {
+    color: #222;
+}
+.elementor-toggle .elementor-tab-title {
+    background-color: #4a7aec;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+}
+.elementor-toggle .elementor-tab-content {
+    color: #abadbe;
+    font-size: 15px;
+}
+/**
+ * Image gallery
+ *
+ */
+
+.gallery .gallery-item img {
+    border: 0px !important;
+}
+.gallery .gallery-item {
+    margin-top: 0px !important;
+}
+/**
+ * Counter
+ *
+ */
+.elementor-counter .elementor-counter-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #292d4f;
+    line-height: 1.9;
+}
+
+/**
+ * Accordion
+ *
+ */
+.elementor-widget-tabs .elementor-tab-title, 
+.elementor-widget-accordion .elementor-accordion .elementor-tab-title {
+    background-color: #4a7aec;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+}
+.elementor-accordion .elementor-tab-title .elementor-accordion-icon.elementor-accordion-icon-left {
+    font-size: 10px;
+    margin-top: 1px;
+}
+.elementor-accordion .elementor-accordion-item {
+    margin-bottom: 15px;
+    color: #abadbe;
+    font-size: 15px;
+}
+/**
+ * Icon
+ */
+ .elementor-view-stacked .elementor-icon {
+    background-color: #4a7aec;
+ }
+ .elementor-view-framed .elementor-icon {
+    color: #4a7aec;
+    border: 3px solid #4a7aec;
+}
+.elementor-icon:hover {
+    color: #1a3c8d;
+}

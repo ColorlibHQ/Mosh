@@ -272,5 +272,24 @@ function mosh_inline_bg_img( $bgUrl ){
 
     return $bg;
 }
+//  customize sidebar option value return
+function mosh_sidebar_opt(){
 
+    $sidebarOpt = mosh_opt( 'mosh-blog-sidebar-settings' );
+    $sidebar = '1';
+    // Blog Sidebar layout  opt
+    if( is_array( $sidebarOpt ) ){
+        $sidebarOpt =  $sidebarOpt;
+    }else{
+        $sidebarOpt =  json_decode( $sidebarOpt, true );
+    }
+    
+    
+    if( !empty( $sidebarOpt['columnsCount'] ) ){
+        $sidebar = $sidebarOpt['columnsCount'];
+    }
+
+
+    return $sidebar;
+}
 ?>
