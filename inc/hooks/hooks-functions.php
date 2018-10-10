@@ -79,18 +79,8 @@ if( !defined( 'ABSPATH' ) ){
 	if( !function_exists('mosh_blog_col_start_cb') ){
 		function mosh_blog_col_start_cb(){
 			
-			$sidebarOpt = mosh_opt( 'mosh-blog-sidebar-settings' );
-		
-			// Blog Sidebar layout  opt
-			$sidebarOpt =  json_decode( $sidebarOpt, true );
-
-			
-			if( !empty( $sidebarOpt['columnsCount'] ) ){
-				$sidebarOpt = $sidebarOpt['columnsCount'];
-			}else{
-				$sidebarOpt = '';
-			}
-						
+			$sidebarOpt = mosh_sidebar_opt();
+								
 			//
 			if( !is_page() ){
 				$pullRight  = mosh_pull_right( $sidebarOpt , '3' );
@@ -299,18 +289,8 @@ if( !defined( 'ABSPATH' ) ){
 	if( !function_exists('mosh_blog_sidebar_cb') ){
 		function mosh_blog_sidebar_cb(){
 			
-			$sidebarOpt = mosh_opt( 'mosh-blog-sidebar-settings' );			
-			
-			// Blog Sidebar layout  opt
-			$sidebarOpt =  json_decode( $sidebarOpt, true );
-			
-			if( !empty( $sidebarOpt['columnsCount'] ) ){
-				$sidebarOpt = $sidebarOpt['columnsCount'];
-			}else{
-				$sidebarOpt = '';
-			}
-			
-		
+			$sidebarOpt = mosh_sidebar_opt();
+					
 			if( $sidebarOpt != '1'  || is_page()  ){
 				get_sidebar();
 			}

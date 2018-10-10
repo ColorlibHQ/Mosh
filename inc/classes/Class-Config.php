@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Mosh {
 
 	// Theme Version
-	private $mosh_version = '1.0';
+	private $mosh_version = '1.2';
 
 	// Minimum WordPress Version required
 	private $min_wp = '4.0';
@@ -24,10 +24,35 @@ final class Mosh {
 	// Minimum PHP version required
 	private $min_php = '5.6.25';
 
+	function __construct(){
+
+		// After setup theme
+		add_action( 'after_setup_theme', array( $this, 'support' ) );
+		// elementor flag
+		add_action( 'after_switch_theme', array( $this, 'set_elementor_flag' ) );
+		// Enqueue elementor theme default style 
+		add_action( 'elementor/frontend/after_enqueue_styles', array( $this, 'enqueue_elementor_theme_default_style' ) );
+		// Enqueue elementor notice script
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_elementor_notice_script' ) );
+		// Elementor desiable default style
+		add_action( 'wp_ajax_elementor_desiable_default_style' , array( $this, 'elementor_desiable_default_style' ) );
+		// initialize theme flag
+		$this->init();
+
+	}
 	// Theme init
 	public function init() {
 
 		$this->setup();
+
+		// customizer init Instantiate
+		if( class_exists('Epsilon_Framework') ){
+			$this->customizer_init();
+		}
+		
+		// Instantiate  Dashboard
+		$Epsilon_init_Dashboard = Epsilon_init_Dashboard::get_instance();
+
 	}
 
 	// Theme setup
@@ -38,8 +63,6 @@ final class Mosh {
 		$enqueu->scripts = $this->enqueue();
 		$enqueu->mosh_scripts_enqueue_init();
 
-		// Welcome screen
-		$this->init_welcome_screen();
 
 	}
 
@@ -100,8 +123,7 @@ final class Mosh {
 
 		$cssPath = MOSH_DIR_CSS_URI;
 		$jsPath  = MOSH_DIR_JS_URI;
-		$apiKey  = mosh_opt( 'mosh_map_apikey' );
-
+		
 		$scripts = array(
 			'style'   => array(
 				array(
@@ -187,92 +209,6 @@ final class Mosh {
 
 	} // end enqueu method
 
-	/**
-	 * Initiate the welcome screen
-	 */
-
-	function init_welcome_screen() {
-		// Welcome screen
-		if ( is_admin() ) {
-			global $mosh_required_actions, $mosh_recommended_plugins;
-
-			$mosh_recommended_plugins = array(
-				'elementor'                 => array( 'recommended' => true, 'plugin_filrname' => 'elementor' ),
-				'contact-form-7'            => array( 'recommended' => true, 'plugin_filrname' => 'wp-contact-form-7' ),
-				'colorlib-login-customizer' => array(
-					'recommended'     => true,
-					'plugin_filrname' => 'colorlib-login-customizer',
-				),
-				'simple-custom-post-order'  => array(
-					'recommended'     => true,
-					'plugin_filrname' => 'simple-custom-post-order',
-				),
-
-			);
-
-			/*
-			 * id - unique id; required
-			 * title
-			 * description
-			 * check - check for plugins (if installed)
-			 * plugin_slug - the plugin's slug (used for installing the plugin)
-			 *
-			 */
-			$mosh_required_actions = array(
-
-				array(
-					"id"          => 'mosh-companion-plugin',
-					"title"       => Mosh_Notify_System::create_plugin_title( 'Mosh Companion', 'mosh' ),
-					"description" => __( 'It is highly recommended that you install the mosh companion.', 'mosh' ),
-					'plugin_slug' => 'mosh-companion',
-					'plugin_filrname' => 'mosh-companion',
-					"check"       => Mosh_Notify_System::check_plugin_is_active( 'mosh-companion' ),
-				),
-				array(
-					"id"          => 'mosh-elementor',
-					"title"       => Mosh_Notify_System::create_plugin_title( 'Elementor', 'elementor' ),
-					'description' => __( 'It is highly recommended that you install the elementor.', 'mosh' ),
-					'plugin_slug' => 'elementor',
-					'plugin_filrname' => 'elementor',
-					"check"       => Mosh_Notify_System::check_plugin_active( 'elementor', 'elementor' ),
-				),
-
-				array(
-					"id"          => 'mosh-contact-form',
-					"title"       => Mosh_Notify_System::create_plugin_title( 'WP Contact Form 7', 'contact-form-7' ),
-					'description' => __( 'It is highly recommended that you install the WP Contact Form 7.', 'mosh' ),
-					'plugin_slug' => 'contact-form-7',
-					'plugin_filrname' => 'wp-contact-form-7',
-					"check"       => Mosh_Notify_System::check_plugin_active( 'contact-form-7', 'wp-contact-form-7' ),
-				),
-				array(
-					"id"          => 'mosh-oneclick-demo-importer',
-					"title"       => Mosh_Notify_System::create_plugin_title( 'One Click Demo Import', 'one-click-demo-import' ),
-					'description' => __( 'It is highly recommended that you install the One Click Demo Import to demo import.', 'mosh' ),
-					'plugin_slug' => 'one-click-demo-import',
-					'plugin_filrname' => 'one-click-demo-import',
-					"check"       => Mosh_Notify_System::check_plugin_active( 'one-click-demo-import', 'one-click-demo-import' ),
-				),
-				array(
-					"id"          => 'mosh-req-ac-install-data',
-					"title"       => esc_html__( 'Import Demo Data', 'mosh' ),
-					"description" => esc_html__( 'Before demo install make sure mosh companion and one click demo importer are installed.', 'mosh' ),
-					"help"        => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'themes.php?page=mosh-demo-import' ) . '">' . __( 'Jump To Import', 'mosh' ) . '</a>',
-					"check"       => Mosh_Notify_System::check_mosh_importers(),
-				),
-				array(
-					"id"          => 'mosh-req-ac-static-latest-news',
-					"title"       => esc_html__( 'Set front page to static', 'mosh' ),
-					"description" => esc_html__( 'If you just installed Mosh, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'mosh' ),
-					"help"        => 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>. <br/><br/> <a class="button button-secondary" target="_blank"  href="' . self_admin_url( 'options-reading.php' ) . '">' . __( 'Set manually', 'mosh' ) . '</a> <a class="button button-primary"  href="' . wp_nonce_url( self_admin_url( 'themes.php?page=mosh-welcome&tab=recommended_actions&action=set_page_automatic' ), 'set_page_automatic' ) . '">' . __( 'Set automatically', 'mosh' ) . '</a>',
-					"check"       => Mosh_Notify_System::is_not_static_page(),
-				),
-			);
-
-			new Mosh_Welcome_Screen();
-		}
-	}
-
 
 	// Google Font
 	private function google_font() {
@@ -296,6 +232,128 @@ final class Mosh {
 		return esc_url_raw( $fontUrl );
 
 	} //End google_font method
+
+	/**
+	 * Epsilon customizer
+	 *
+	 */
+
+	// epsilon customizer init
+	private function customizer_init(){
+
+		// epsilon customizer quickie settings
+	
+		add_filter( 'epsilon_quickie_bar_shortcuts', array( $this, 'epsilon_quickie' ) );
+		
+		// Instantiate Epsilon Framework object
+		$Epsilon_Framework = new Epsilon_Framework();
+
+		
+		// Instantiate mosh theme customizer
+		$mosh_theme_customizer = new mosh_theme_customizer();
+	}
+
+	public function epsilon_quickie(){
+
+			return	array(
+
+			'links' => array(
+				array(
+					'link_to'   => 'mosh_options_panel',
+					'icon'      => 'dashicons dashicons-admin-tools',
+					'link_type' => 'panel',
+				),
+				array(
+					'link_to'   => 'nav_menus',
+					'icon'      => 'dashicons dashicons-menu',
+					'link_type' => 'panel',
+				),
+				array(
+					'link_to'   => 'widgets',
+					'icon'      => 'dashicons dashicons-archive',
+					'link_type' => 'panel',
+				),
+				array(
+					'link_to'   => 'custom_css',
+					'icon'      => 'dashicons dashicons-editor-code',
+					'link_type' => 'section',
+				),
+
+			),
+			'logo'  => array(
+				'url' => EPSILON_URI . '/assets/img/epsilon-logo.png',
+				'alt' => 'Epsilon Builder Logo',
+			),
+		);
+
+	}
+	
+	/**
+	 * Notice for Elementor default style
+	 *
+	 */
+
+	// Check elementor preview page
+	public static function check_elementor_preview_page(){
+
+		if( ( isset( $_REQUEST['action'] ) && 'elementor' == $_REQUEST['action'] ) || isset( $_REQUEST['elementor-preview'] ) ){
+			return true;
+		}
+
+		return false;
+
+	}
+	// Set flag for elementor ( hooked in after switch theme )
+	public function set_elementor_flag(){
+		update_option( 'mosh_had_elementor', 'no' );
+	}
+	// Elementor dsiable default style
+	public function elementor_desiable_default_style(){
+
+		$nonce = $_POST['nonce'];
+		if ( ! wp_verify_nonce( $nonce, 'mosh-elementor-notice-nonce' ) ) {
+			return;
+		}
+		$reply = $_POST['reply'];
+		if ( ! empty( $reply ) ) {
+			if ( $reply == 'yes' ) {
+				update_option( 'elementor_disable_color_schemes', 'yes' );
+				update_option( 'elementor_disable_typography_schemes', 'yes' );
+			}
+			update_option( 'mosh_had_elementor', 'yes' );
+		}
+		die();
+
+	}
+	// Enqueue theme default style for elementor
+	public function enqueue_elementor_theme_default_style(){
+
+		$disabled_color_schemes      = get_option( 'elementor_disable_color_schemes' );
+		$disabled_typography_schemes = get_option( 'elementor_disable_typography_schemes' );
+
+		if ( $disabled_color_schemes === 'yes' && $disabled_typography_schemes === 'yes' ) {
+			wp_enqueue_style( 'mosh-elementor-default-style',  MOSH_DIR_CSS_URI. 'elementor-default-element-style.css', array(), $this->mosh_version );
+		}
+	}
+	// Enqueue elementor notice scripts
+	public function enqueue_elementor_notice_script(){
+
+		$had_elementor = get_option( 'mosh_had_elementor' );
+
+		if( $had_elementor == 'no' && self::check_elementor_preview_page() ){
+			wp_enqueue_script( 'mosh-elementor-notice', MOSH_DIR_JS_URI.'mosh-elementor-notice.js', array('jquery'), '1.0', true );
+			wp_localize_script(
+				'mosh-elementor-notice',
+				'moshElementorNotice',
+				array(
+					'ajaxurl' => admin_url( 'admin-ajax.php' ),
+					'nonce'   => wp_create_nonce( 'mosh-elementor-notice-nonce' ),
+				)
+			);
+		}
+
+	}
+
 
 } // End Mosh Class
 

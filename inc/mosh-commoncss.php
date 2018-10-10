@@ -105,7 +105,7 @@ function mosh_common_custom_css() {
 			.bradcumbContent .breadcrumb-item a, 
 			.bradcumbContent .breadcrumb-item,
 			.bradcumbContent h2 {
-				color: {$headerTextColor};
+				color: #{$headerTextColor};
 			}
 			.mosh-breadcumb-area{
 				background-color: {$headerbgcolor}
