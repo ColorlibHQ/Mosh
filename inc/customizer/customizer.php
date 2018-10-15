@@ -24,7 +24,7 @@ class mosh_theme_customizer {
         include( MOSH_DIR_PATH_INC. 'customizer/fields/fields.php' );
 
         // Change panel to theme option
-        $wp_customize->get_section( 'title_tagline' )->panel      = 'mosh_theme_options_panel';
+        $wp_customize->get_section( 'title_tagline' )->panel      = 'mosh_options_panel';
         // change priorities
         $wp_customize->get_section( 'title_tagline' )->priority     = 0;
 
