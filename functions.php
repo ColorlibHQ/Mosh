@@ -69,12 +69,19 @@ if ( ! defined( 'MOSH_DIR_PATH_HOOKS' ) ) {
 	define( 'MOSH_DIR_PATH_HOOKS', MOSH_DIR_PATH_INC . 'hooks/' );
 }
 
+// Admin Enqueue script
+function mosh_admin_script(){
+    wp_enqueue_style( 'mosh-admin', get_template_directory_uri().'/assets/css/mosh_admin.css', false, '1.0.0' );
+    wp_enqueue_script( 'mosh_admin', get_template_directory_uri().'/assets/js/mosh_admin.js', false, '1.0.0' );
+}
+add_action( 'admin_enqueue_scripts', 'mosh_admin_script' );
+
+
 
 /**
  * Include File
  *
  */
-
 require_once( MOSH_DIR_PATH_INC . 'mosh-breadcrumbs.php' );
 require_once( MOSH_DIR_PATH_INC . 'mosh-widgets-reg.php' );
 require_once( MOSH_DIR_PATH_INC . 'wp_bootstrap_navwalker.php' );
@@ -88,7 +95,6 @@ require_once( MOSH_DIR_PATH_CLASSES . 'Class-Enqueue.php' );
 require_once( MOSH_DIR_PATH_CLASSES . 'Class-Config.php' );
 require_once( MOSH_DIR_PATH_HOOKS . 'hooks.php' );
 require_once( MOSH_DIR_PATH_HOOKS . 'hooks-functions.php' );
-
 require_once( MOSH_DIR_PATH_INC . 'class-epsilon-dashboard-autoloader.php' );
 require_once( MOSH_DIR_PATH_INC . 'class-epsilon-init-dashboard.php' );
 

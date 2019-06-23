@@ -18,7 +18,7 @@
                             if( has_nav_menu( 'primary-menu' ) ){
                                 $args = array(
                                     'theme_location' => 'primary-menu',
-                                    'container'      => '',
+                                    'container'      => 'menu_container',
                                     'depth'          => 2,
                                     'menu_id'        => 'nav',
                                     'menu_class'     => 'navbar-nav animated',

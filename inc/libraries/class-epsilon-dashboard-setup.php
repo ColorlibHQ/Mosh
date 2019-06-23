@@ -331,16 +331,16 @@ class Epsilon_Dashboard_Setup {
 			),
 			array(
 				'id'          => 'mosh-check-ocdi',
-				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'title', 'One Click Demo Import' ),
-				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'description', 'One Click Demo Import' ),
+				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'title', 'One Click Demo Import', 'verify_ocdi' ),
+				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'description', 'One Click Demo Import', 'verify_ocdi' ),
 				'plugin_slug' => 'one-click-demo-import',
 				'state'       => false,
 				'check'       => defined( 'PT_OCDI_VERSION' ),
 				'actions'     => array(
 					array(
-						'label'   => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'installed', 'One Click Demo Import' ) ? __( 'Activate Plugin', 'mosh' ) : __( 'Install Plugin', 'mosh' ),
+						'label'   => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'installed', 'One Click Demo Import', 'verify_ocdi' ) ? __( 'Activate Plugin', 'mosh' ) : __( 'Install Plugin', 'mosh' ),
 						'type'    => 'handle-plugin',
-						'handler' => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'installed', 'One Click Demo Import' ),
+						'handler' => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'installed', 'One Click Demo Import', 'verify_ocdi' ),
 					),
 				),
 			),
@@ -376,8 +376,8 @@ class Epsilon_Dashboard_Setup {
 			),
 			array(
 				'id'          => 'mosh-check-ocdi',
-				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'title', 'One Click Demo Import' ),
-				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'description', 'One Click Demo Import' ),
+				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'title', 'One Click Demo Import', 'verify_ocdi' ),
+				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'one-click-demo-import', 'description', 'One Click Demo Import', 'verify_ocdi' ),
 				'plugin_slug' => 'one-click-demo-import',
 				'check'       => defined( 'PT_OCDI_VERSION' ),
 			),

@@ -34,6 +34,3 @@
      */
 
 	do_action( 'mosh_header' );
-
-    ?>
-	

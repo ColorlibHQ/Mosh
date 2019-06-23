@@ -77,7 +77,21 @@ class Epsilon_Init_Notify_System extends Epsilon_Notify_System {
 
 		if ( file_exists( ABSPATH . 'wp-content/plugins/contact-form-7' ) ) {
 			$arr['installed'] = true;
-			$arr['active']    = defined( 'WPCF7_VERSION' );
+			$arr['active']    = true;
+		}
+
+		return $arr;
+	}
+
+	public static function verify_ocdi() {
+		$arr = array(
+			'installed' => false,
+			'active'    => false,
+		);
+
+		if ( file_exists( ABSPATH . 'wp-content/plugins/one-click-demo-import' ) ) {
+			$arr['installed'] = true;
+			$arr['active']    = true;
 		}
 
 		return $arr;

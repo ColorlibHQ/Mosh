@@ -2267,8 +2267,17 @@ source {
   position: absolute;
 }
 
-
-
+span.tagline{
+    color: #abadbe;
+    display: inline-block;
+}
+h2 .navbar-brand{
+    margin-right: 8px;
+    font-size: 26px;
+}
+.navbar-brand img{
+    max-width: 160px;    
+}
 /* --------------------------------
 ============= The End =============
 ---------------------------------*/
