@@ -95,8 +95,6 @@ require_once( MOSH_DIR_PATH_CLASSES . 'Class-Enqueue.php' );
 require_once( MOSH_DIR_PATH_CLASSES . 'Class-Config.php' );
 require_once( MOSH_DIR_PATH_HOOKS . 'hooks.php' );
 require_once( MOSH_DIR_PATH_HOOKS . 'hooks-functions.php' );
-require_once( MOSH_DIR_PATH_INC . 'class-epsilon-dashboard-autoloader.php' );
-require_once( MOSH_DIR_PATH_INC . 'class-epsilon-init-dashboard.php' );
 
 
 
@@ -121,3 +119,11 @@ if ( ! function_exists( 'mosh_modern_supports' ) ) {
 	}
 	add_action( 'after_setup_theme', 'mosh_modern_supports', 20 );
 }
+
+/**
+ * The theme's Customizer controls.
+ *
+ * Replaces the Epsilon framework: same fields and stored values,
+ * built on core's Customizer API.
+ */
+require_once get_template_directory() . '/inc/customizer/colorlib-customizer/colorlib-customizer.php';

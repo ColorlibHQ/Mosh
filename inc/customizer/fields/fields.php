@@ -14,10 +14,10 @@
  ***********************************/
 
 // Preloader toggle field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh-preloader-toggle-settings',
     array(
-        'type'        => 'epsilon-toggle',
+        'type'        => 'colorlib-toggle',
         'label'       => esc_html__( 'Preloader On/Off', 'mosh' ),
         'description' => esc_html__( 'Toggle to display preloader.', 'mosh' ),
         'section'     => 'mosh_general_options_section',
@@ -25,10 +25,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // Preloader background color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_preloaderbgcolor',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Preloader Background Color', 'mosh' ),
         'description' => esc_html__( 'Select the preloader background color.', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
@@ -37,10 +37,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // Preloader color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_loaderbordcolor',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Preloader Border Color', 'mosh' ),
         'description' => esc_html__( 'Select the preloader border color.', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
@@ -49,10 +49,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // Preloader Active Border Color Picker
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_loaderbordactivecolor',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Preloader Border Active Color', 'mosh' ),
         'description' => esc_html__( 'Select the preloader border active color.', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
@@ -62,10 +62,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Theme Main Color Picker
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_themecolor',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Theme Main Color.', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_general_options_section',
@@ -74,10 +74,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Theme Secondary Color Picker
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_themesecondcolor',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Theme Secondary Color.', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_general_options_section',
@@ -85,7 +85,7 @@ Epsilon_Customizer::add_field(
     )
 );
 // Instagram Access Token field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_igaccess_token',
     array(
         'type'              => 'text',
@@ -100,7 +100,7 @@ Epsilon_Customizer::add_field(
 // Google map api key field
 $url = 'https://developers.google.com/maps/documentation/geocoding/get-api-key';
 
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_map_apikey',
     array(
         'type'              => 'text',
@@ -117,7 +117,7 @@ Epsilon_Customizer::add_field(
  ***********************************/
 
 // Header button #1 text settings
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_btnone_text',
     array(
         'type'        => 'text',
@@ -128,7 +128,7 @@ Epsilon_Customizer::add_field(
 );
 
 // Header button #1 url
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_btnone_url',
     array(
         'type'        => 'text',
@@ -138,7 +138,7 @@ Epsilon_Customizer::add_field(
     )
 );
 // Header button #2 url
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_btntwo_text',
     array(
         'type'        => 'text',
@@ -148,7 +148,7 @@ Epsilon_Customizer::add_field(
     )
 );
 // Header button #2 url
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_btntwo_url',
     array(
         'type'        => 'text',
@@ -159,10 +159,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Header top search form show / Hide opt
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh-searchopt-toggle-settings',
     array(
-        'type'        => 'epsilon-toggle',
+        'type'        => 'colorlib-toggle',
         'label'       => esc_html__( 'Show header search form', 'mosh' ),
         'description' => esc_html__( 'Toggle to show header search form.', 'mosh' ),
         'section'     => 'mosh_headertop_options_section',
@@ -171,10 +171,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Header Nav Bar Background Color Picker
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_header_navbar_bgColor',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Header Nav Bar Background Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_headertop_options_section',
@@ -182,10 +182,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // Header Sticky  Nav Bar Background Color Picker
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_header_navbarsticky_bgColor',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Header Sticky Nav Bar Background Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_headertop_options_section',
@@ -193,10 +193,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // Header Nav Bar Menu Color Picker
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_header_navbar_menuColor',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Header Nav Bar Menu Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_headertop_options_section',
@@ -205,10 +205,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Header Nav Bar Menu Hover Color Picker
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_header_navbar_menuHovColor',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Header Nav Bar Menu Hover Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_headertop_options_section',
@@ -216,10 +216,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // Header Nav Bar Menu Color Picker
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_header_sticky_navbar_menuColor',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Sticky Header Nav Bar Menu Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_headertop_options_section',
@@ -227,10 +227,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // Header Nav Bar Menu Hover Color Picker
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_header_sticky_navbar_menuHovColor',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Sticky Header Nav Bar Menu Hover Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_headertop_options_section',
@@ -238,10 +238,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // Page Header Background Color Picker
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_headerbgcolor',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Header Background Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'colors',
@@ -255,7 +255,7 @@ Epsilon_Customizer::add_field(
 
 
 // Post excerpt length field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_post_excerpt',
     array(
         'type'        => 'text',
@@ -267,17 +267,17 @@ Epsilon_Customizer::add_field(
     )
 );
 // Blog sidebar layout field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh-blog-sidebar-settings',
     array(
-        'type'     => 'epsilon-layouts',
+        'type'     => 'colorlib-layouts',
         'label'    => esc_html__( 'Blog Layout', 'mosh' ),
         'section'  => 'mosh_blog_options_section',
         'description' => esc_html__( 'Select the option to set blog page layout.', 'mosh' ),
         'layouts'  => array(
-            '1' => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/one-column.png',
-            '2' => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/epsilon-section-titleright.jpg',
-            '3' => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/epsilon-section-titleleft.jpg',
+            '1' => get_template_directory_uri() . '/inc/customizer/colorlib-customizer/assets/img/layout-one-column.svg',
+            '2' => get_template_directory_uri() . '/inc/customizer/colorlib-customizer/assets/img/layout-sidebar-right.svg',
+            '3' => get_template_directory_uri() . '/inc/customizer/colorlib-customizer/assets/img/layout-sidebar-left.svg',
         ),
         'default'  => array(
             'columnsCount' => 1,
@@ -304,7 +304,7 @@ Epsilon_Customizer::add_field(
  ***********************************/
 
 // 404 text #1 field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_fof_text_one',
     array(
         'type'              => 'text',
@@ -315,7 +315,7 @@ Epsilon_Customizer::add_field(
     )
 );
 // 404 text #2 field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_fof_text_two',
     array(
         'type'              => 'text',
@@ -326,10 +326,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // 404 text #1 color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_fof_textonecolor_settings',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( '404 Text #1 Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_fof_options_section',
@@ -337,10 +337,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // 404 text #2 color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_fof_texttwocolor_settings',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( '404 Text #2 Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_fof_options_section',
@@ -348,10 +348,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // 404 background color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_fof_bgcolor_settings',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( '404 Page Background Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_fof_options_section',
@@ -364,10 +364,10 @@ Epsilon_Customizer::add_field(
  ***********************************/
 
 // Footer widget toggle field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh-widget-toggle-settings',
     array(
-        'type'        => 'epsilon-toggle',
+        'type'        => 'colorlib-toggle',
         'label'       => esc_html__( 'Footer widget show/hide', 'mosh' ),
         'description' => esc_html__( 'Toggle to display footer widgets.', 'mosh' ),
         'section'     => 'mosh_footer_options_section',
@@ -375,10 +375,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // Footer widget toggle field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh-footersocial-toggle-settings',
     array(
-        'type'        => 'epsilon-toggle',
+        'type'        => 'colorlib-toggle',
         'label'       => esc_html__( 'Footer bottom social media show/hide', 'mosh' ),
         'description' => esc_html__( 'Toggle to display footer bottom social media.', 'mosh' ),
         'section'     => 'mosh_footer_options_section',
@@ -386,20 +386,20 @@ Epsilon_Customizer::add_field(
     )
 );
 // Footer copy right text add settings
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh-copyright-text-settings',
     array(
-        'type'        => 'epsilon-text-editor',
+        'type'        => 'colorlib-text-editor',
         'label'       => esc_html__( 'Footer copyright text', 'mosh' ),
         'section'     => 'mosh_footer_options_section',
         'default'     => '',
     )
 );
 // Footer widget background color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_footer_bgColor_settings',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Footer Widget Background Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_footer_options_section',
@@ -407,10 +407,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // Footer widget text color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_footer_wtcolor_settings',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Footer Widget Text Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_footer_options_section',
@@ -418,10 +418,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // Footer widget title color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_footer_widgettitlecolor_settings',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Footer Widget Title Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_footer_options_section',
@@ -429,10 +429,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // Footer widget anchor color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_footer_wanchorcolor_settings',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Footer Widget Anchor Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_footer_options_section',
@@ -440,10 +440,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // Footer widget anchor hover Color 
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_footer_wanchorhovcolor_settings',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Footer Widget Anchor Hover Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_footer_options_section',
@@ -451,10 +451,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // Footer bottom background color 
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_footerbtm_bgColor_settings',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Footer Copyright Area Background Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_footer_options_section',
@@ -462,10 +462,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // Footer Copyright Text Color
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_footer_copyrighttextcolor_settings',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Footer Copyright Text Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_footer_options_section',
@@ -473,10 +473,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // Footer Social Icon Color
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_footer_socialiconcolor_settings',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Footer Social Icon Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_footer_options_section',
@@ -484,10 +484,10 @@ Epsilon_Customizer::add_field(
     )
 );
 // Footer Social Icon Hover Color
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
     'mosh_footer_socialiconhovercolor_settings',
     array(
-        'type'        => 'epsilon-color-picker',
+        'type'        => 'colorlib-color-picker',
         'label'       => esc_html__( 'Footer Social Icon Hover Color', 'mosh' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'mosh_footer_options_section',
