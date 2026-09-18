@@ -109,3 +109,15 @@ require_once( MOSH_DIR_PATH_INC . 'class-epsilon-init-dashboard.php' );
  */
 
 $Mosh = new Mosh();
+
+/**
+ * Editor and markup support this theme predates.
+ */
+if ( ! function_exists( 'mosh_modern_supports' ) ) {
+	function mosh_modern_supports() {
+		add_theme_support( 'responsive-embeds' );
+		add_theme_support( 'align-wide' );
+		add_theme_support( 'editor-styles' );
+	}
+	add_action( 'after_setup_theme', 'mosh_modern_supports', 20 );
+}
