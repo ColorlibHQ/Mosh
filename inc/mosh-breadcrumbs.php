@@ -80,7 +80,7 @@ if ( ! function_exists( 'mosh_breadcrumbs' ) ) {
             $post_type         = get_post_type();
             $post_type_object  = get_post_type_object( $post_type );
             $post_type_archive = get_post_type_archive_link( $post_type );
-            $html .= '<li class="breadcrumb-item active" aria-current="page"><a class="bread-cat s-text16 bread-custom-post-type-' . esc_attr( $post_type ) . '" href="' . esc_url( $post_type_archive ) . '" title="' . esc_attr( $post_type_object->labels->name ) . '">' . esc_attr( $post_type_object->labels->name ) . ' <i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i></a></li>';
+            $html .= '<li class="breadcrumb-item active" aria-current="page"><a class="bread-cat s-text16 bread-custom-post-type-' . esc_attr( $post_type ) . '" href="' . esc_url( $post_type_archive ) . '" title="' . esc_attr( $post_type_object->labels->name ) . '">' . esc_attr( $post_type_object->labels->name ) . ' <i class="fa-solid fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i></a></li>';
             $html .= '<span class="s-text17 bread-' . $post->ID . '" title="' . $post->post_title . '">' . $post->post_title . '</span>';
 			
         } elseif ( is_category() ) {

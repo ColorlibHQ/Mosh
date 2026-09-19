@@ -11,7 +11,7 @@
 						echo mosh_theme_logo('navbar-brand');
 						?>
                         <!-- Menu Area -->
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mosh-navbar" aria-controls="mosh-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mosh-navbar" aria-controls="mosh-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
                         <div class="collapse navbar-collapse justify-content-end" id="mosh-navbar">
                             <?php 
