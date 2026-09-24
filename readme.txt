@@ -1,8 +1,9 @@
 === Mosh ===
 Contributors:		colorlib
 Tags:               custom-header, custom-menu, featured-image-header, featured-images, full-width-template, translation-ready
-Requires at least:	4.0
-Tested up to:		4.4.2
+Requires PHP: 7.4
+Requires at least: 6.6
+Tested up to: 7.1
 
 == Description ==
 Mosh is a clean, simple, responsive and customizable WordPress theme that looks awesome on any device. For a quick launch of a page to showcases your works, your talents and your services, apredefined theme is a wise decision to make. Mosh has it all in store for you to easily and effortlessly engineer an appealing page to attract new clients and seal new business deals.
