@@ -183,13 +183,6 @@ final class Mosh {
 					'in_footer'  => true,
 				),
 				array(
-					'handler'    => 'mosh-theme-wow',
-					'file'       => $jsPath . 'wow.js',
-					'dependency' => array( 'jquery' ),
-					'version'    => '1.1.3',
-					'in_footer'  => true,
-				),
-				array(
 					'handler'    => 'mosh-theme-scrollup',
 					'file'       => $jsPath . 'scrollup.js',
 					'dependency' => array( 'jquery' ),
@@ -197,10 +190,17 @@ final class Mosh {
 					'in_footer'  => true,
 				),
 				array(
+					'handler'		=> 'mosh-ui-js',
+					'file' 			=> $jsPath.'colorlib-ui.js',
+					'dependency' 	=> array(),
+					'version' 		=> '2.1.1',
+					'in_footer' 	=> true
+				),
+				array(
 					'handler'    => 'mosh-theme-mosh-active',
 					'file'       => $jsPath . 'active.js',
-					'dependency' => array( 'jquery' ),
-					'version'    => $this->mosh_version,
+					'dependency' => array( 'jquery', 'mosh-ui-js' ),
+					'version'    => $this->mosh_version . '-s1',
 					'in_footer'  => true,
 				),
 

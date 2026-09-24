@@ -23,7 +23,7 @@
     var $window = $(window);
 
     if ($window.width() > 767) {
-        new WOW().init();
+        ColorlibUI.reveal('.wow');
     }
 
     $window.on('scroll', function () {
