@@ -178,29 +178,22 @@ final class Mosh {
 				array(
 					'handler'    => 'mosh-theme-bootstrap',
 					'file'       => $jsPath . 'bootstrap.min.js',
-					'dependency' => array( 'jquery' ),
+					'dependency' => array(),
 					'version'    => '5.3.8-4',
 					'in_footer'  => true,
 				),
 				array(
-					'handler'    => 'mosh-theme-scrollup',
-					'file'       => $jsPath . 'scrollup.js',
-					'dependency' => array( 'jquery' ),
-					'version'    => '2.4.1',
-					'in_footer'  => true,
-				),
-				array(
 					'handler'		=> 'mosh-ui-js',
-					'file' 			=> $jsPath.'colorlib-ui.js',
+					'file' 			=> $jsPath . ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? 'colorlib-ui.js' : 'colorlib-ui.min.js' ),
 					'dependency' 	=> array(),
-					'version' 		=> '2.1.1',
+					'version' 		=> '3.0.0',
 					'in_footer' 	=> true
 				),
 				array(
 					'handler'    => 'mosh-theme-mosh-active',
 					'file'       => $jsPath . 'active.js',
-					'dependency' => array( 'jquery', 'mosh-ui-js' ),
-					'version'    => $this->mosh_version . '-s1',
+					'dependency' => array( 'mosh-ui-js' ),
+					'version'    => $this->mosh_version . '-s2',
 					'in_footer'  => true,
 				),
 
@@ -299,7 +292,7 @@ final class Mosh {
 		$had_elementor = get_option( 'mosh_had_elementor' );
 
 		if( $had_elementor == 'no' && self::check_elementor_preview_page() ){
-			wp_enqueue_script( 'mosh-elementor-notice', MOSH_DIR_JS_URI.'mosh-elementor-notice.js', array('jquery'), '1.0', true );
+			wp_enqueue_script( 'mosh-elementor-notice', MOSH_DIR_JS_URI.'mosh-elementor-notice.js', array(), '1.0-s2', true );
 			wp_localize_script(
 				'mosh-elementor-notice',
 				'moshElementorNotice',
